@@ -1,7 +1,8 @@
 import React from 'react'
 import { Route, Routes } from 'react-router-dom'
-import Register from "../registerPage/Register"
-import Login from "../loginPage/Login"
+import Login from '../loginPage/Login'
+import Register from '../registerPage/Register'
+
 import LendPage from './LendPage'
 
 
