@@ -1,21 +1,7 @@
-import React, { useState } from "react";
+import React from "react";
+import { GiSmartphone } from "react-icons/gi";
 import styles from "./Register.module.css";
-const Register = () => {
-  const [fullName, setFullName] = useState("");
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
-
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    if(fullName && email && password){
-      const payload={
-        fullName,
-        email,
-        password
-      }
-    }
-  };
-
+const OTPPage = () => {
   return (
     <div className={styles.main}>
       <div className={styles.milaap_logo_mobile_view}>
@@ -55,42 +41,52 @@ const Register = () => {
           <div className={styles.first_child}>
             <div className={styles.signup}>
               <div className={styles.signup_title}>
-                Sign up & manage fundraisers, donations & more
+                <GiSmartphone className={styles.phone_icon} />
+                Verify your mobile number and receive priority support just
+                anytime
               </div>
               <div>
-                <form className={styles.form} onSubmit={handleSubmit}>
-                  <input
-                    type="text"
-                    value={fullName}
-                    placeholder="Full name"
-                    className={styles.input_tag}
-                    onChange={(e) => setFullName(e.target.value)}
-                    required
-                  />
-                  {/* <p className={styles.input_error}>Error</p> */}
+                <form className={styles.form}>
+                  <div className={styles.country}>
+                    <select className={styles.countryCode}>
+                      <option value="91" name="IN">
+                        +91
+                      </option>
+                      <option value="1" name="USA">
+                        +1
+                      </option>
+                      <option value="65" name="singapore">
+                        +65
+                      </option>
+                      <option value="234" name="nigeria">
+                        +234
+                      </option>
+                      <option value="249" name="sudan">
+                        +249
+                      </option>
+                      <option value="48" name="poland">
+                        +48
+                      </option>
+                      <option value="49" name="germany">
+                        +49
+                      </option>
+                    </select>
+                    <input
+                      type="nummber"
+                      placeholder="Phone Number"
+                      className={styles.input_tag}
+                      required
+                    />
+                  </div>
 
                   <input
-                    type="email"
-                    value={email}
-                    placeholder="Email"
-                    className={styles.input_tag}
-                    onChange={(e) => setEmail(e.target.value)}
-                    required
-                  />
-                  {/* <p className={styles.input_error}>Error</p> */}
-
-                  <input
-                    type="password"
-                    value={password}
-                    placeholder="Password"
-                    onChange={(e) => setPassword(e.target.value)}
+                    type="number"
+                    placeholder="OTP"
                     className={styles.input_tag}
                     required
                   />
-                  {/* <p className={styles.input_error}>Error</p> */}
-
                   <button type="submit" className={styles.submit_btn}>
-                    Submit
+                    Verify
                   </button>
                 </form>
               </div>
@@ -103,11 +99,10 @@ const Register = () => {
         </div>
       </div>
       <div className={styles.mobile_already_signup}>
-        <p>Already signed up with Milaap?</p>
         <button className={styles.already_login_btn}>Login</button>
       </div>
     </div>
   );
 };
 
-export default Register;
+export default OTPPage;
