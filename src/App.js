@@ -1,9 +1,9 @@
 import './App.css';
-
+import OTPPage from "./registerPage/OTPPage"
 function App() {
   return (
-    <div className="App">
-     
+    <div >
+      <OTPPage/>
     </div>
   );
 }
