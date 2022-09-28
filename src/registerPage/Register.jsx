@@ -7,6 +7,13 @@ const Register = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
+    if(fullName && email && password){
+      const payload={
+        fullName,
+        email,
+        password
+      }
+    }
   };
 
   return (
