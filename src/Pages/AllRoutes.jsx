@@ -1,0 +1,30 @@
+import React from 'react'
+import { Route, Routes } from 'react-router-dom'
+import Register from "../registerPage/Register"
+import Login from "../loginPage/Login"
+import LendPage from './LendPage'
+
+
+const AllRoutes = () => {
+  return (
+    <div>
+    <Routes>
+        {/* <Route path="/" element={<HomePage/>}/> */}
+        {/* <Route path="/donate" element={<Donate/>}/> */}
+        {/* <Route path="/donate" element={<SingleDonate/>}/> */}
+        <Route path='/fund' element={<LendPage/>}/>
+
+        <Route path='/register' element={<Register/>}/>
+        <Route path='/login' element={<Login/>}/>
+
+        {/* <Route path='/pricing' element={<Pricing/>}/> */}
+
+        {/* <Route path='/contactUs' element={<ContactUs/>}/> */}
+        {/* <Route path='/SuccessPayment' element={<SuccessPayment/>}/> */}
+    </Routes>
+
+    </div>
+  )
+}
+
+export default AllRoutes
