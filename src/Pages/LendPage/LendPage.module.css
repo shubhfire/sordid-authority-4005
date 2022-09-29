@@ -1,0 +1,54 @@
+.lendHeading {
+  border: 1px solid black;
+  width: 1120px;
+  padding: 24px 0;
+}
+
+.lendHeading > h1 {
+  font-size: 1.7rem;
+  color: #514f4f;
+  font-weight: 500;
+  letter-spacing: 1px;
+}
+
+.lendHeading > p {
+  font-weight: 500;
+  color: #8a8787;
+  letter-spacing: 1px;
+}
+
+.mianContent {
+  border: 1px solid red;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  gap: 20px;
+  width: 1120px;
+  margin: auto;
+}
+
+.sortPaginate {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  min-width: 850px;
+  margin: 40px 0;
+}
+
+.sortContainer {
+  width: 240px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+
+
+.sortIcon{
+  width: 44px;
+}
+
+button{
+  margin: 4px 0 0
+}
