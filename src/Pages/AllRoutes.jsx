@@ -1,10 +1,9 @@
 import React from 'react'
 import { Route, Routes } from 'react-router-dom'
 import Login from '../loginPage/Login'
+// import Login from '../loginPage/Login'
 import Register from '../registerPage/Register'
-
-import LendPage from './LendPage'
-
+import ContactUs from '../Pages/ContactUs/ContactUs'
 
 const AllRoutes = () => {
   return (
@@ -13,7 +12,7 @@ const AllRoutes = () => {
         {/* <Route path="/" element={<HomePage/>}/> */}
         {/* <Route path="/donate" element={<Donate/>}/> */}
         {/* <Route path="/donate" element={<SingleDonate/>}/> */}
-        <Route path='/fund' element={<LendPage/>}/>
+        <Route path='/contactUs' element={<ContactUs/>}/>
 
         <Route path='/register' element={<Register/>}/>
         <Route path='/login' element={<Login/>}/>
