@@ -6,6 +6,9 @@ import { useDisclosure } from "@chakra-ui/react-use-disclosure";
 import { useDispatch } from "react-redux";
 import { registerData } from "../redux/authReducer/action";
 import { useToast } from "@chakra-ui/react";
+
+
+
 const Register = () => {
   const [fullName, setFullName] = useState("");
   const [email, setEmail] = useState("");
@@ -14,7 +17,7 @@ const Register = () => {
   const navigate=useNavigate()
   const toast = useToast()
 
-const dispatch=useDispatch()
+  const dispatch=useDispatch()
   const handleSubmit = (e) => {
     e.preventDefault();
     if (fullName && email && password) {
@@ -35,9 +38,8 @@ const dispatch=useDispatch()
         navigate("/OTPPage")
       })
     }
-  };
-
-  return (
+  }
+  return(
     <div className={styles.main}>
       <div className={styles.milaap_logo_mobile_view}>
         <div className={styles.mobile_view_logo}>
@@ -119,23 +121,17 @@ const dispatch=useDispatch()
           </div>
           <div className={styles.already_signup}>
             <p>Already signed up with Milaap?</p>
-            <button>
-              <Link to={`/login`}>Login</Link>
-            </button>
+            <button>Login</button>
           </div>
         </div>
       </div>
       <div className={styles.mobile_already_signup}>
         <p>Already signed up with Milaap?</p>
-        <button className={styles.already_login_btn}>
-          <Link to={`/login`}>Login</Link>
-        </button>
+        <button className={styles.already_login_btn}>Login</button>
       </div>
-      <button onClick={onClose }>
-        <GrClose/>
-      </button>
     </div>
-  );
+  )
+   
 };
 
 export default Register;
