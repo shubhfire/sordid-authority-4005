@@ -3,10 +3,8 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
-<<<<<<< HEAD
-=======
+
     "@chakra-ui/icons": "^2.0.10",
->>>>>>> 80a85ba74816753762b1de067a25cf077cd1f3f9
     "@chakra-ui/react": "^2.3.4",
     "@emotion/react": "^11.10.4",
     "@emotion/styled": "^11.10.4",
@@ -15,16 +13,13 @@
     "@testing-library/user-event": "^13.5.0",
     "axios": "^0.27.2",
     "framer-motion": "^7.4.0",
-<<<<<<< HEAD
     "json-server": "^0.17.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
-=======
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-icons": "^4.4.0",
     "react-responsive-carousel": "^3.2.23",
->>>>>>> 80a85ba74816753762b1de067a25cf077cd1f3f9
     "react-router-dom": "^6.4.1",
     "react-scripts": "5.0.1",
     "react-switch": "^7.0.0",
