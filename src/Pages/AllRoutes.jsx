@@ -2,6 +2,7 @@ import React from 'react'
 import { Route, Routes } from 'react-router-dom'
 import Login from '../loginPage/Login'
 import Register from '../registerPage/Register'
+import Donate from './Donate/Donate'
 
 import LendPage from './LendPage'
 
@@ -11,7 +12,7 @@ const AllRoutes = () => {
     <div>
     <Routes>
         {/* <Route path="/" element={<HomePage/>}/> */}
-        {/* <Route path="/donate" element={<Donate/>}/> */}
+        <Route path="/donate" element={<Donate />}/>
         {/* <Route path="/donate" element={<SingleDonate/>}/> */}
         <Route path='/fund' element={<LendPage/>}/>
 

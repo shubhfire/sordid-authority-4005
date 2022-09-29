@@ -1,0 +1,9 @@
+.boxText {
+    width: 50%;
+    border: 1px solid gray;
+    margin: auto;
+    padding: 2%;
+    font-size: 0.6cm;
+    background-color: rgb(251,251,251);
+    border-radius: 10px;
+}
