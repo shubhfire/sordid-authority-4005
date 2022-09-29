@@ -3,6 +3,7 @@ import { Route, Routes } from 'react-router-dom'
 import Register from "../registerPage/Register"
 import Login from "../loginPage/Login"
 import LendPage from './LendPage'
+import OTPPage from '../registerPage/OTPPage'
 
 
 const AllRoutes = () => {
@@ -15,6 +16,7 @@ const AllRoutes = () => {
         <Route path='/fund' element={<LendPage/>}/>
 
         <Route path='/register' element={<Register/>}/>
+        <Route path='/OTPPage' element={<OTPPage/>}/>
         <Route path='/login' element={<Login/>}/>
 
         {/* <Route path='/pricing' element={<Pricing/>}/> */}

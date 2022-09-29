@@ -1,7 +1,31 @@
-import React from "react";
+import React, { useState } from "react";
 import { GiSmartphone } from "react-icons/gi";
 import styles from "./Register.module.css";
+
 const OTPPage = () => {
+  const [otp, setOtp] = useState();
+  const [phoneNumber, setPhoneNumber] = useState();
+  // const clickVerifire = (e) => {
+  //   e.preventDfault()
+  //   let recaptcha = new firebase.auth.RecaptchaVerifier("recaptcha-container");
+
+  //   firebase
+  //     .auth()
+  //     .signInWithPhoneNumber(phoneNumber, recaptcha)
+  //     .then((e) => {
+  //       if (otp == null) {
+  //         return;
+  //       }
+  //       e.confirm(otp)
+  //         .then((e) => {
+  //           console.log("Verified");
+  //         })
+  //         .catch((e) => {
+  //           alert("Wrong OTP");
+  //         });
+  //     });
+  // };
+
   return (
     <div className={styles.main}>
       <div className={styles.milaap_logo_mobile_view}>
@@ -74,6 +98,9 @@ const OTPPage = () => {
                     <input
                       type="nummber"
                       placeholder="Phone Number"
+                      value={phoneNumber}
+                      name="phoneNumber"
+                      onChange={(e)=>setPhoneNumber(e.target.value)}
                       className={styles.input_tag}
                       required
                     />
@@ -82,10 +109,14 @@ const OTPPage = () => {
                   <input
                     type="number"
                     placeholder="OTP"
+                    value={otp}
+                    name="otp"
+                    onChange={(e)=>setOtp(e.target.value)}
                     className={styles.input_tag}
                     required
                   />
-                  <button type="submit" className={styles.submit_btn}>
+                  <div id="recaptcha-container"></div>
+                  <button type="submit" className={styles.submit_btn} >
                     Verify
                   </button>
                 </form>

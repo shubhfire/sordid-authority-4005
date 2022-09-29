@@ -1,18 +1,39 @@
 import React, { useState } from "react";
+import { Link, useNavigate } from "react-router-dom";
 import styles from "./Register.module.css";
+import {GrClose} from "react-icons/gr"
+import { useDisclosure } from "@chakra-ui/react-use-disclosure";
+import { useDispatch } from "react-redux";
+import { registerData } from "../redux/authReducer/action";
+import { useToast } from "@chakra-ui/react";
 const Register = () => {
   const [fullName, setFullName] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const {onClose }=useDisclosure()
+  const navigate=useNavigate()
+  const toast = useToast()
 
+const dispatch=useDispatch()
   const handleSubmit = (e) => {
     e.preventDefault();
-    if(fullName && email && password){
-      const payload={
+    if (fullName && email && password) {
+      const payload = {
         fullName,
         email,
-        password
+        password,
       }
+      dispatch(registerData(payload)).then(()=>{
+        toast({
+          position:'top',
+          title: `Hi, ${fullName}`,
+          description: "Your account registered succussfully",
+          status: 'success',
+          duration: 9000,
+          isClosable: true,
+        })
+        navigate("/OTPPage")
+      })
     }
   };
 
@@ -98,14 +119,21 @@ const Register = () => {
           </div>
           <div className={styles.already_signup}>
             <p>Already signed up with Milaap?</p>
-            <button>Login</button>
+            <button>
+              <Link to={`/login`}>Login</Link>
+            </button>
           </div>
         </div>
       </div>
       <div className={styles.mobile_already_signup}>
         <p>Already signed up with Milaap?</p>
-        <button className={styles.already_login_btn}>Login</button>
+        <button className={styles.already_login_btn}>
+          <Link to={`/login`}>Login</Link>
+        </button>
       </div>
+      <button onClick={onClose }>
+        <GrClose/>
+      </button>
     </div>
   );
 };
