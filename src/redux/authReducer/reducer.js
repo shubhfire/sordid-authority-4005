@@ -1,10 +1,15 @@
-import { getLocalData, getNameFromLocal, saveLocalData } from "../utils/localStorage";
+import {
+  getLocalData,
+  getNameFromLocal,
+  saveLocalData,
+  saveNameInLocal,
+} from "../utils/localStorage";
 import * as types from "./actionType";
 const init = {
   signupData: [],
-  isAuth: getLocalData("login")? true:false,
-  login:getLocalData("login") ||[],
-  fullName:getNameFromLocal("fullName")||[],
+  isAuth: getLocalData("login") ? true : false,
+  login: getLocalData("login") || [],
+  fullName: getNameFromLocal("fullName") || [],
   isLoading: false,
   isError: false,
 };
@@ -19,8 +24,7 @@ const reducer = (state = init, { type, payload }) => {
       };
 
     case types.USER_SIGNUP_SUCCESS:
-      saveLocalData("login",payload.fullName)
-      getNameFromLocal("fullName",payload.fullName)
+      saveLocalData("login", payload);
       return {
         ...state,
         isLoading: false,
@@ -33,9 +37,16 @@ const reducer = (state = init, { type, payload }) => {
         isLoading: false,
         isError: true,
       };
+    case types.USER_FULLNAME:
+      saveNameInLocal("fullName", payload);
+      return {
+        isLoading: false,
+        ...state,
+        fullName: payload,
+      };
     default:
       return state;
   }
 };
 
-export {reducer};
+export { reducer };

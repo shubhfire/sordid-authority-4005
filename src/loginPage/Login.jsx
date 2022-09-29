@@ -6,6 +6,7 @@ import { useToast } from "@chakra-ui/react";
 import LoginInput from "./LoginInput";
 import axios from "axios";
 import { getNameFromLocal } from "../redux/utils/localStorage";
+import * as types from "../redux/authReducer/actionType"
 const Login = () => {
   const [currentLoginData, setCurrentLoginData] = useState([]);
   const [storedData, setStoredData] = useState([]);
@@ -35,6 +36,7 @@ const Login = () => {
       for (var i = 0; i < storedData.length; i++) {
         if (currentLoginData.email === checkEmails[i]) {
           getNameFromLocal("fullName", storedData[i].fullName);
+          dispatch({type:types.USER_FULLNAME, payload:storedData[i].fullName})
           // console.log("fullname",storedData[i].fullName)
           break;
         }

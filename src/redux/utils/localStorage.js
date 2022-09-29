@@ -11,10 +11,16 @@ const getNameFromLocal=key=>{
         return data
     }
 }
+
+const saveNameInLocal=(key,value)=>{
+    if(key && value){
+        localStorage.setItem(key,value)
+    }
+}
 const saveLocalData=(key,value)=>{
     if(key && value){
        localStorage.setItem(key,value)
     }
 }
 
-export {getLocalData,saveLocalData,getNameFromLocal}
+export {getLocalData,saveLocalData,getNameFromLocal,saveNameInLocal}
