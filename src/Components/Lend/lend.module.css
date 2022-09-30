@@ -1,0 +1,112 @@
+.contentCard {
+  margin-bottom: 120px;
+  gap: 30px;
+}
+
+.leftContent {
+  height: 360px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: none;
+}
+
+.imgDiv {
+  height: 270px;
+  width: 280px;
+}
+
+img {
+  height: 200px;
+}
+
+.fundDetails {
+  margin-top: 1rem;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: none;
+}
+
+.fund {
+  color: #9c3353;
+}
+
+.lendBtnDisabled {
+  margin-top: 1rem;
+}
+
+.rightCiontent {
+  height: 400px;
+  line-height: 25px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: none;
+}
+
+.aboutLend {
+  color: #828282;
+  max-height: 400px;
+}
+
+.description {
+  margin-bottom: 10px;
+}
+
+.readMore {
+  display: inline;
+  color: #9c3353;
+  cursor: pointer;
+}
+
+.readMore:hover {
+  text-decoration: underline;
+}
+
+.descDetails {
+  font-size: 0.95rem;
+  display: inline;
+  color: #828282;
+}
+
+.sortBy {
+  margin: 40px 0;
+  font-size: 1.2rem;
+  color: rgb(49, 49, 49);
+}
+
+.dropSort Select,
+.sortIcon {
+  border-color: #828282;
+  border-radius: 18px;
+  height: 28px;
+  text-align: center;
+  cursor: pointer;
+}
+
+.dropDownContainer {
+  margin-bottom: 5px;
+  width: 260px;
+  background-color: #f5f5f5;
+  color: #6c6c6c;
+}
+
+.filterName {
+  font-weight: 500;
+  font-size: 1rem;
+}
+
+.filterName:hover {
+  text-decoration: underline;
+}
+
+.checkBox {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+input {
+  margin-right: 5px;
+}
