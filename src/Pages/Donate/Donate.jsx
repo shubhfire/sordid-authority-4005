@@ -19,8 +19,8 @@ const Donate = () => {
   return (
     <div>
       <div className='boxText'>
-        Thousands are crowdfunding for various causes. Support a fundraiser today.
-      </div>
+       <span>Thousands are crowdfunding for various causes. Support a fundraiser today. </span><img  width="100px" src="https://flyclipart.com/thumb2/helping-hand-icons-858679.png" alt="heping hands" />
+      </div> 
       
       {/* Right Slider start */}
 
