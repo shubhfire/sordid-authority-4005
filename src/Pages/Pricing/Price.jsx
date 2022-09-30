@@ -1,5 +1,6 @@
 import { Box } from "@chakra-ui/react";
 import React from "react";
+import Footer from "../Footer/Footer";
 import Accordions from "./Accordions";
 import ChooseMilaap from "./ChooseMilaap";
 import FundraiserCalculator from "./FundraiserCalculator";
@@ -26,6 +27,7 @@ const Price = () => {
         <h2>Read what people are saying about Milaap!</h2>
       </Box>
       <Accordions />
+      <Footer/>
     </div>
   );
 };
