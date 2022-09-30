@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { NavLink } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
 
 import {
@@ -21,6 +21,8 @@ import {
 import { HamburgerIcon, CloseIcon } from "@chakra-ui/icons";
 
 import Switch from "react-switch";
+import { useDispatch, useSelector } from "react-redux";
+import * as types from "../Redux/authReducer/actionType"
 
 const textSwitch = {
   display: "flex",
@@ -37,7 +39,9 @@ export default function Navbar() {
   const { isOpen, onOpen, onClose } = useDisclosure();
   const [checke, setcheck] = useState(false);
   const navigate = useNavigate();
-
+  const fullName = useSelector((store) => store.AuthReducer.fullName);
+  const auth = useSelector((store) => store.AuthReducer.isAuth);
+const dispatch=useDispatch()
   let activeStyle = {
     backgroundColor: "#9c3353",
     height: "100%",
@@ -64,6 +68,11 @@ export default function Navbar() {
   };
 
   // #9c3353
+
+  const handleLogout=()=>{
+    dispatch({type:types.USER_LOGOUT_SUCCESS, payload: false})
+    navigate("/")
+  }
 
   return (
     <>
@@ -230,6 +239,8 @@ export default function Navbar() {
             >
               Start a fundraiser
             </Button>
+
+            {auth? `${fullName}`:"" }
             <Menu>
               <MenuButton
                 as={Button}
@@ -259,15 +270,26 @@ export default function Navbar() {
                   ></path>
                 </svg>
               </MenuButton>
-              <MenuList display={"flex"}>
-                <MenuItem w={"50%"} onClick={() => navigate("/login")}>
-                  Login
-                </MenuItem>
-                <MenuDivider />
-                <MenuItem w={"50%"} onClick={() => navigate("/register")}>
-                  Register
-                </MenuItem>
-              </MenuList>
+              {auth ? (
+                <MenuList display={"flex"}>
+                  <MenuItem w={"100%"} onClick={handleLogout} >
+                    <Link to={`/login`}>
+                    Logout
+                    </Link>
+                  </MenuItem>
+                  <MenuDivider />
+                </MenuList>
+              ) : (
+                <MenuList display={"flex"}>
+                  <MenuItem w={"50%"} onClick={() => navigate("/login")}>
+                    Login
+                  </MenuItem>
+                  <MenuDivider />
+                  <MenuItem w={"50%"} onClick={() => navigate("/register")}>
+                    Register
+                  </MenuItem>
+                </MenuList>
+              )}
             </Menu>
           </Flex>
         </Flex>
