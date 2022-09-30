@@ -1,8 +1,10 @@
 import "./App.css";
-
+import "./App.css";
 import Navbar from "./Components/Navbar";
 
+
 import AllRoutes from "./Pages/AllRoutes";
+
 
 function App() {
   return (
@@ -10,7 +12,6 @@ function App() {
       <Navbar />
       <AllRoutes />
 
-      {/* <HomePage/> */}
     </div>
   );
 }
