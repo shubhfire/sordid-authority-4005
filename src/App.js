@@ -1,6 +1,7 @@
 import "./App.css";
 import "./App.css";
-import LendPage from "./Pages/LendPage/LendPage";
+import HomePage from "./Pages/HomePage";
+
 import Navbar from "./Components/Navbar"
 import AllRoutes from "./Pages/AllRoutes";
 
@@ -9,7 +10,8 @@ function App() {
     <div className="App">
       <Navbar/>
      <AllRoutes/> 
-      <LendPage />
+      
+      {/* <HomePage/> */}
     </div>
   );
 }
