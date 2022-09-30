@@ -1,23 +1,18 @@
 import React, { useState } from "react";
-import { Link, useNavigate } from "react-router-dom";
+import {  useNavigate } from "react-router-dom";
 import styles from "./Register.module.css";
-import {GrClose} from "react-icons/gr"
-import { useDisclosure } from "@chakra-ui/react-use-disclosure";
 import { useDispatch } from "react-redux";
 import { registerData } from "../redux/authReducer/action";
 import { useToast } from "@chakra-ui/react";
-
-
 
 const Register = () => {
   const [fullName, setFullName] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const {onClose }=useDisclosure()
-  const navigate=useNavigate()
-  const toast = useToast()
+  const navigate = useNavigate();
+  const toast = useToast();
 
-  const dispatch=useDispatch()
+  const dispatch = useDispatch();
   const handleSubmit = (e) => {
     e.preventDefault();
     if (fullName && email && password) {
@@ -25,21 +20,21 @@ const Register = () => {
         fullName,
         email,
         password,
-      }
-      dispatch(registerData(payload)).then(()=>{
+      };
+      dispatch(registerData(payload)).then(() => {
         toast({
-          position:'top',
+          position: "top",
           title: `Hi, ${fullName}`,
           description: "Your account registered succussfully",
-          status: 'success',
+          status: "success",
           duration: 9000,
           isClosable: true,
-        })
-        navigate("/OTPPage")
-      })
+        });
+        navigate("/OTPPage");
+      });
     }
-  }
-  return(
+  };
+  return (
     <div className={styles.main}>
       <div className={styles.milaap_logo_mobile_view}>
         <div className={styles.mobile_view_logo}>
@@ -111,7 +106,6 @@ const Register = () => {
                     required
                   />
                   {/* <p className={styles.input_error}>Error</p> */}
-
                   <button type="submit" className={styles.submit_btn}>
                     Submit
                   </button>
@@ -130,8 +124,7 @@ const Register = () => {
         <button className={styles.already_login_btn}>Login</button>
       </div>
     </div>
-  )
-   
+  );
 };
 
 export default Register;

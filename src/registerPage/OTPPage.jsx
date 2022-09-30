@@ -1,30 +1,86 @@
 import React, { useState } from "react";
 import { GiSmartphone } from "react-icons/gi";
 import styles from "./Register.module.css";
+import { authentication } from "./firebase_config";
+import { RecaptchaVerifier, signInWithPhoneNumber } from "firebase/auth";
+import { useToast } from "@chakra-ui/react";
+import { useNavigate } from "react-router-dom";
 
 const OTPPage = () => {
-  const [otp, setOtp] = useState();
+  const [countryCode, setCountryCode] = useState("");
   const [phoneNumber, setPhoneNumber] = useState();
-  // const clickVerifire = (e) => {
-  //   e.preventDfault()
-  //   let recaptcha = new firebase.auth.RecaptchaVerifier("recaptcha-container");
+  const [expandForm, setExpandForm] = useState(false);
+  const [otp, setOtp] = useState();
+  const navigation=useNavigate()
 
-  //   firebase
-  //     .auth()
-  //     .signInWithPhoneNumber(phoneNumber, recaptcha)
-  //     .then((e) => {
-  //       if (otp == null) {
-  //         return;
-  //       }
-  //       e.confirm(otp)
-  //         .then((e) => {
-  //           console.log("Verified");
-  //         })
-  //         .catch((e) => {
-  //           alert("Wrong OTP");
-  //         });
-  //     });
-  // };
+  const toast = useToast();
+
+
+  const generateRecaptcha = () => {
+    window.recaptchaVerifier = new RecaptchaVerifier(
+      "recaptcha-container",
+      {
+        size: "invisible",
+        callback: (response) => {
+          // reCAPTCHA solved, allow signInWithPhoneNumber.
+        },
+      },
+      authentication
+    );
+  };
+  const requestOtp = (e) => {
+    e.preventDefault();
+    alert("requestOTP")
+
+    if (phoneNumber === "" || phoneNumber.length < 10) return;
+    setExpandForm(true);
+    generateRecaptcha();
+    let appVerifier = window.recaptchaVerifier;
+    signInWithPhoneNumber(authentication, phoneNumber, appVerifier)
+      .then((confirmationResult) => {
+        window.confirmationResult = confirmationResult;
+      })
+      .catch((error) => {
+        alert(error);
+      });
+  };
+
+  const verifyOTP = (e) => {
+    e.preventDefault();
+    //
+    // console.log("code with number",phoneNumber)
+    if (otp.length === 6) {
+      let confirmationResult = window.confirmationResult;
+      confirmationResult
+      .confirm(otp)
+      .then((result) => {
+        const user = result.user;
+        console.log("verify",user)
+          toast({
+            title: ``,
+            position: "bottom",
+            description: `Well come to milaap family`,
+            status: "success",
+            duration: 9000,
+            isClosable: true,
+          });
+          navigation("/")
+
+        })
+        .catch((error) => {
+        console.log("verify",error)
+
+          toast({
+            title: "Invalid OTP",
+            position: "bottom",
+            description: `Well come to milaap family`,
+            status: "error",
+            duration: 9000,
+            isClosable: true,
+          });
+        });
+    }
+  };
 
   return (
     <div className={styles.main}>
@@ -70,10 +126,13 @@ const OTPPage = () => {
                 anytime
               </div>
               <div>
-                <form className={styles.form}>
+                <div className={styles.form} >
                   <div className={styles.country}>
-                    <select className={styles.countryCode}>
-                      <option value="91" name="IN">
+                    <select
+                      className={styles.countryCode}
+                      onChange={(e) => setCountryCode(e.target.value)}
+                    >
+                      <option value="+91" name="IN">
                         +91
                       </option>
                       <option value="1" name="USA">
@@ -100,26 +159,28 @@ const OTPPage = () => {
                       placeholder="Phone Number"
                       value={phoneNumber}
                       name="phoneNumber"
-                      onChange={(e)=>setPhoneNumber(e.target.value)}
+                      onChange={(e) => setPhoneNumber(e.target.value)}
                       className={styles.input_tag}
                       required
                     />
                   </div>
+                  <button onClick={requestOtp}>
+                    Send OTP
+                  </button>
 
                   <input
                     type="number"
                     placeholder="OTP"
                     value={otp}
                     name="otp"
-                    onChange={(e)=>setOtp(e.target.value)}
+                    onChange={(e) => setOtp(e.target.value)}
                     className={styles.input_tag}
-                    required
                   />
                   <div id="recaptcha-container"></div>
-                  <button type="submit" className={styles.submit_btn} >
+                  <button  className={styles.submit_btn} onClick={verifyOTP}>
                     Verify
                   </button>
-                </form>
+                </div>
               </div>
             </div>
           </div>

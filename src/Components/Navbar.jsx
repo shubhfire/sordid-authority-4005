@@ -101,7 +101,7 @@ export default function Navbar() {
               {" "}
               <Image
                 onClick={() => navigate("/")}
-                style={{marginLeft: "24px",cursor:"pointer"}}
+                style={{ marginLeft: "24px", cursor: "pointer" }}
                 h={10}
                 src="https://assets.milaap.org/assets/milaap-logo-tiny-4d3dbc4e55c2aaec351f0f376329c624236c4d6266b910f472684e70603f600d.png"
                 alt="Dan Abramov"
@@ -192,12 +192,33 @@ export default function Navbar() {
           >
             <Button
               onClick={() => navigate("/fund")}
-              width={{base:"130px", sm: "180px", md: "180px", lg: "190px", xl: "190px", "2xl": "200px" }}
-              height={{base:"30px", sm: "40px", md: "40px", lg: "50px", xl: "50px", "2xl": "50px" }}
-              fontSize={{base:"9px", sm: "11px", md: "15px", lg: "16px", xl: "16px", "2xl": "17px" }}
+              width={{
+                base: "130px",
+                sm: "180px",
+                md: "180px",
+                lg: "190px",
+                xl: "190px",
+                "2xl": "200px",
+              }}
+              height={{
+                base: "30px",
+                sm: "40px",
+                md: "40px",
+                lg: "50px",
+                xl: "50px",
+                "2xl": "50px",
+              }}
+              fontSize={{
+                base: "9px",
+                sm: "11px",
+                md: "15px",
+                lg: "16px",
+                xl: "16px",
+                "2xl": "17px",
+              }}
               fontWeight={"semibold"}
               borderRadius={"50px"}
-              style={{letterSpacing: "1.6px"}}
+              style={{ letterSpacing: "1.6px" }}
               background={"#9c3353"}
               color={"white"}
               variant="solid"
@@ -206,7 +227,6 @@ export default function Navbar() {
                   "rgba(0, 0, 0, 0.25) 0px 14px 28px, rgba(0, 0, 0, 0.22) 0px 10px 10px;",
               }}
               _focus={{ color: "white", background: "#9c3353" }}
-              
             >
               Start a fundraiser
             </Button>

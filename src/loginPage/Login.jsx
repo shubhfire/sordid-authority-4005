@@ -3,18 +3,22 @@ import styles from "../registerPage/Register.module.css";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import { useToast } from "@chakra-ui/react";
-import LoginInput from "./LoginInput";
+
+import { BiShow, BiHide } from "react-icons/bi";
+
 import axios from "axios";
 import { getNameFromLocal } from "../redux/utils/localStorage";
 import * as types from "../redux/authReducer/actionType"
 const Login = () => {
-  const [currentLoginData, setCurrentLoginData] = useState([]);
+  
+    const [email, setEmail] = useState("");
+    const [password, setPassword] = useState("");
   const [storedData, setStoredData] = useState([]);
-  const [fullName, setFullName] = useState("");
+  const [show, setShow] = useState(false);
+  const handleClick = () => setShow(!show);
 
   const toast = useToast();
   const dispatch = useDispatch();
-  console.log("data", storedData);
   const location = useLocation();
   const navigation = useNavigate();
   const commingFrom = location.state?.from?.pathname || "/";
@@ -28,14 +32,15 @@ const Login = () => {
       return e.password;
     });
     if (
-      checkEmails.includes(currentLoginData["email"]) &&
-      checkPasswords.includes(currentLoginData["password"])
+      checkEmails.includes(email) &&
+      checkPasswords.includes(password)
     ) {
-      console.log(checkEmails.includes(currentLoginData["email"]));
-      console.log(checkPasswords.includes(currentLoginData["password"]));
+      console.log(checkEmails.includes(email));
+      console.log(checkPasswords.includes(password));
       for (var i = 0; i < storedData.length; i++) {
-        if (currentLoginData.email === checkEmails[i]) {
+        if (email === checkEmails[i]) {
           getNameFromLocal("fullName", storedData[i].fullName);
+          dispatch({type:types.USER_LOGIN_SUCCESS,payload: true})
           dispatch({type:types.USER_FULLNAME, payload:storedData[i].fullName})
           // console.log("fullname",storedData[i].fullName)
           break;
@@ -49,8 +54,10 @@ const Login = () => {
         duration: 9000,
         isClosable: true,
       });
-      // navigation(commingFrom, { replace: true });
+      navigation(commingFrom, { replace: true });
     } else {
+      dispatch({type:types.USER_LOGIN_FAILURE,payload: false})
+
       toast({
         title: "Wrong email or password",
         position: "bottom",
@@ -117,12 +124,12 @@ const Login = () => {
                 Sign up & manage fundraisers, donations & more
               </div>
               <div>
-                <LoginInput
+                {/* <LoginInput
                   setCurrentLoginData={setCurrentLoginData}
                   handleLogin={handleLogin}
-                />
+                /> */}
               </div>
-              {/* <div>
+              <div>
                 <form className={styles.form} onSubmit={handleLogin}>
                   <div
                     style={{
@@ -157,11 +164,11 @@ const Login = () => {
                       {show ? <BiHide /> : <BiShow />}
                     </div>
                   </div>
-                  <button type="submit" className={styles.submit_btn}>
+                  <button type="submit" className={styles.submit_btn} >
                     Submit
                   </button>
                 </form>
-              </div> */}
+              </div>
             </div>
           </div>
           <div className={styles.already_signup}>

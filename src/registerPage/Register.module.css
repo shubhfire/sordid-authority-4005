@@ -124,7 +124,7 @@
   background-color: whitesmoke;
   width: 70%;
   margin: auto;
-  height: 9vh;
+  height: auto;
   justify-content: space-around;
   border-radius: 8px;
   align-items: center;
