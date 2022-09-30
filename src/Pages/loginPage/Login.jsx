@@ -7,12 +7,11 @@ import { useToast } from "@chakra-ui/react";
 import { BiShow, BiHide } from "react-icons/bi";
 
 import axios from "axios";
-import { getNameFromLocal } from "../utils/localStorage";
-import * as types from "../Redux/authReducer/actionType"
+import { getNameFromLocal } from "../../utils/localStorage";
+import * as types from "../../Redux/authReducer/actionType";
 const Login = () => {
-  
-    const [email, setEmail] = useState("");
-    const [password, setPassword] = useState("");
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
   const [storedData, setStoredData] = useState([]);
   const [show, setShow] = useState(false);
   const handleClick = () => setShow(!show);
@@ -31,18 +30,15 @@ const Login = () => {
     const checkPasswords = storedData.map((e) => {
       return e.password;
     });
-    if (
-      checkEmails.includes(email) &&
-      checkPasswords.includes(password)
-    ) {
-      console.log(checkEmails.includes(email));
-      console.log(checkPasswords.includes(password));
+    if (checkEmails.includes(email) && checkPasswords.includes(password)) {
       for (var i = 0; i < storedData.length; i++) {
         if (email === checkEmails[i]) {
           getNameFromLocal("fullName", storedData[i].fullName);
-          dispatch({type:types.USER_LOGIN_SUCCESS,payload: true})
-          dispatch({type:types.USER_FULLNAME, payload:storedData[i].fullName})
-          // console.log("fullname",storedData[i].fullName)
+          dispatch({ type: types.USER_LOGIN_SUCCESS, payload: true });
+          dispatch({
+            type: types.USER_FULLNAME,
+            payload: storedData[i].fullName,
+          });
           break;
         }
       }
@@ -56,7 +52,7 @@ const Login = () => {
       });
       navigation(commingFrom, { replace: true });
     } else {
-      dispatch({type:types.USER_LOGIN_FAILURE,payload: false})
+      dispatch({ type: types.USER_LOGIN_FAILURE, payload: false });
 
       toast({
         title: "Wrong email or password",
@@ -164,7 +160,7 @@ const Login = () => {
                       {show ? <BiHide /> : <BiShow />}
                     </div>
                   </div>
-                  <button type="submit" className={styles.submit_btn} >
+                  <button type="submit" className={styles.submit_btn}>
                     Submit
                   </button>
                 </form>
