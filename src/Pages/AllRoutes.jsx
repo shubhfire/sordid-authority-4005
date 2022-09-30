@@ -4,12 +4,15 @@ import Login from '../loginPage/Login'
 // import Login from '../loginPage/Login'
 import Register from '../registerPage/Register'
 import ContactUs from '../Pages/ContactUs/ContactUs'
+import HomePage from '../Pages/HomePage'
+
+
 
 const AllRoutes = () => {
   return (
     <div>
     <Routes>
-        {/* <Route path="/" element={<HomePage/>}/> */}
+        <Route path="/" element={<HomePage/>}/>
         {/* <Route path="/donate" element={<Donate/>}/> */}
         {/* <Route path="/donate" element={<SingleDonate/>}/> */}
         <Route path='/contactUs' element={<ContactUs/>}/>
