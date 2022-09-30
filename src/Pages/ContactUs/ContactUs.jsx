@@ -131,7 +131,7 @@ const ContactUs = () => {
            <p style={{color: "#9c3353"}}>9916174848</p>
         </div>
         <br />
-       <img src={join} />
+       <img src={join} alt=""/>
     </div>
 
 
