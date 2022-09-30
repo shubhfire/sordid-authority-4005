@@ -3,11 +3,7 @@ import { Route, Routes } from 'react-router-dom'
 import Login from '../loginPage/Login'
 import Register from "../registerPage/Register"
 import OTPPage from "../registerPage/OTPPage"
-import React from "react";
-import { Route, Routes } from "react-router-dom";
-import Login from "../loginPage/Login";
 // import Login from '../loginPage/Login'
-import Register from "../registerPage/Register";
 import ContactUs from "../Pages/ContactUs/ContactUs";
 import Price from "./Pricing/Price";
 // import Price from "./Pricing/Price";
