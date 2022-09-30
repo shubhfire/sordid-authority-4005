@@ -1,0 +1,54 @@
+
+.head_container{
+    width: 100%;
+    height: 25rem;
+    background-color: #9c3353;
+    margin-top: 2rem;
+    
+    display: flex;
+   
+  
+}
+.conatct_para{
+    margin-top: 10rem;
+    /* position: relative; */
+    padding-left: 5rem;
+   
+   
+}
+
+.conatct_para>p:first-child{
+    color: white;
+    font-size: 36px;
+    font-weight: 600;
+    text-align: start;
+    
+    
+}
+.conatct_para>p:last-child{
+    color: white;
+    width: 70%;
+    font-size: 20px;  
+    text-align: start;
+}
+.contact_img{
+    margin-top: 5rem;
+}
+.location_icons{
+    width: 50%;
+    padding-left: 5rem;
+    
+}.location_icons>p{
+    margin-top: -2rem;
+    font-size: 30px;
+    color: #9c3353;
+}
+
+.social_info{
+    width: 100%;
+    /* margin: auto; */
+    padding-left: 5rem;
+
+   
+
+}
