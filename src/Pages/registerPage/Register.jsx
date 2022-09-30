@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import {  useNavigate } from "react-router-dom";
 import styles from "./Register.module.css";
 import { useDispatch } from "react-redux";
-import { registerData } from "../redux/authReducer/action";
+import { registerData } from "../Redux/authReducer/action";
 import { useToast } from "@chakra-ui/react";
 
 const Register = () => {
