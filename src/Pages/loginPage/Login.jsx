@@ -6,12 +6,8 @@ import { useToast } from "@chakra-ui/react";
 import { BiShow, BiHide } from "react-icons/bi";
 import axios from "axios";
 import { getNameFromLocal } from "../../utils/localStorage";
-<<<<<<< HEAD
 import * as types from "../../Redux/authReducer/actionType"
-=======
-import * as types from "../../Redux/authReducer/actionType";
 import { useSpeechSynthesis } from "react-speech-kit";
->>>>>>> eddef9c7a21efb7b912900c7910c5d37271db6d3
 const Login = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
