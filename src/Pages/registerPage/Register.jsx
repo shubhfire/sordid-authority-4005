@@ -1,9 +1,11 @@
 import React, { useState } from "react";
-import {  useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import styles from "./Register.module.css";
 import { useDispatch } from "react-redux";
 import { registerData } from "../../Redux/authReducer/action";
 import { useToast } from "@chakra-ui/react";
+import { BiShow, BiHide } from "react-icons/bi";
+import { useSpeechSynthesis } from "react-speech-kit";
 
 const Register = () => {
   const [fullName, setFullName] = useState("");
@@ -11,6 +13,10 @@ const Register = () => {
   const [password, setPassword] = useState("");
   const navigate = useNavigate();
   const toast = useToast();
+  const [show, setShow] = useState(false);
+  const handleClick = () => setShow(!show);
+  const {speak}=useSpeechSynthesis()
+
 
   const dispatch = useDispatch();
   const handleSubmit = (e) => {
@@ -33,6 +39,8 @@ const Register = () => {
         navigate("/OTPPage");
       });
     }
+    let successText="Your data has been registered successfully on milaap web site"
+    speak({text:successText})
   };
   return (
     <div className={styles.main}>
@@ -77,34 +85,56 @@ const Register = () => {
               </div>
               <div>
                 <form className={styles.form} onSubmit={handleSubmit}>
-                  <input
-                    type="text"
-                    value={fullName}
-                    placeholder="Full name"
-                    className={styles.input_tag}
-                    onChange={(e) => setFullName(e.target.value)}
-                    required
-                  />
+                  <div
+                    style={{
+                      display: "flex",
+                      alignItems: "center",
+                    }}
+                  >
+                    <input
+                      type="text"
+                      value={fullName}
+                      placeholder="Full name"
+                      className={styles.input_tag}
+                      onChange={(e) => setFullName(e.target.value)}
+                      required
+                    />
+                  </div>
                   {/* <p className={styles.input_error}>Error</p> */}
-
-                  <input
-                    type="email"
-                    value={email}
-                    placeholder="Email"
-                    className={styles.input_tag}
-                    onChange={(e) => setEmail(e.target.value)}
-                    required
-                  />
+                  <div
+                    style={{
+                      display: "flex",
+                      alignItems: "center",
+                    }}
+                  >
+                    <input
+                      type="email"
+                      value={email}
+                      placeholder="Email"
+                      className={styles.input_tag}
+                      onChange={(e) => setEmail(e.target.value)}
+                      required
+                    />
+                  </div>
                   {/* <p className={styles.input_error}>Error</p> */}
-
-                  <input
-                    type="password"
-                    value={password}
-                    placeholder="Password"
-                    onChange={(e) => setPassword(e.target.value)}
-                    className={styles.input_tag}
-                    required
-                  />
+                  <div
+                    style={{
+                      display: "flex",
+                      alignItems: "center",
+                    }}
+                  >
+                    <input
+                      type={show?"text":"password"}
+                      value={password}
+                      placeholder="Password"
+                      onChange={(e) => setPassword(e.target.value)}
+                      className={styles.input_tag}
+                      required
+                    />
+                    <div onClick={handleClick} className={styles.login_show}>
+                      {show ? <BiHide /> : <BiShow />}
+                    </div>
+                  </div>
                   {/* <p className={styles.input_error}>Error</p> */}
                   <button type="submit" className={styles.submit_btn}>
                     Submit
@@ -115,7 +145,9 @@ const Register = () => {
           </div>
           <div className={styles.already_signup}>
             <p>Already signed up with Milaap?</p>
-            <button>Login</button>
+            <button>
+              <Link to={`/login`}>Login</Link>
+            </button>
           </div>
         </div>
       </div>

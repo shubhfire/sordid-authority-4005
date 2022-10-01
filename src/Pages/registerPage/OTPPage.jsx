@@ -4,17 +4,20 @@ import styles from "./Register.module.css";
 import { authentication } from "./firebase_config";
 import { RecaptchaVerifier, signInWithPhoneNumber } from "firebase/auth";
 import { useToast } from "@chakra-ui/react";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
+import { useSpeechSynthesis } from "react-speech-kit";
+import 'react-phone-number-input/style.css'
+import PhoneInput from "react-phone-number-input";
 
 const OTPPage = () => {
-  const [countryCode, setCountryCode] = useState("");
   const [phoneNumber, setPhoneNumber] = useState();
   const [expandForm, setExpandForm] = useState(false);
   const [otp, setOtp] = useState();
-  const navigation=useNavigate()
+  const navigation = useNavigate();
+  const {speak}=useSpeechSynthesis()
+
 
   const toast = useToast();
-
 
   const generateRecaptcha = () => {
     window.recaptchaVerifier = new RecaptchaVerifier(
@@ -24,13 +27,15 @@ const OTPPage = () => {
         callback: (response) => {
           // reCAPTCHA solved, allow signInWithPhoneNumber.
         },
+        // defaultCountry:"IN"
       },
       authentication
     );
   };
   const requestOtp = (e) => {
     e.preventDefault();
-    alert("requestOTP")
+    alert("OTP sent");
+    alert(phoneNumber)
 
     if (phoneNumber === "" || phoneNumber.length < 10) return;
     setExpandForm(true);
@@ -48,14 +53,15 @@ const OTPPage = () => {
   const verifyOTP = (e) => {
     e.preventDefault();
     //
-    // console.log("code with number",phoneNumber)
     if (otp.length === 6) {
       let confirmationResult = window.confirmationResult;
       confirmationResult
-      .confirm(otp)
-      .then((result) => {
-        const user = result.user;
-        console.log("verify",user)
+        .confirm(otp)
+        .then((result) => {
+          const user = result.user;
+
+          let successText="Welcome in meelaaap family"
+          speak({text:successText})
           toast({
             title: ``,
             position: "bottom",
@@ -64,12 +70,11 @@ const OTPPage = () => {
             duration: 9000,
             isClosable: true,
           });
-          navigation("/")
-
+          navigation("/");
         })
         .catch((error) => {
-        console.log("verify",error)
-
+          let successText="Please enter valid OTP"
+          speak({text:successText})
           toast({
             title: "Invalid OTP",
             position: "bottom",
@@ -126,47 +131,18 @@ const OTPPage = () => {
                 anytime
               </div>
               <div>
-                <div className={styles.form} >
-                  <div className={styles.country}>
-                    <select
-                      className={styles.countryCode}
-                      onChange={(e) => setCountryCode(e.target.value)}
-                    >
-                      <option value="+91" name="IN">
-                        +91
-                      </option>
-                      <option value="1" name="USA">
-                        +1
-                      </option>
-                      <option value="65" name="singapore">
-                        +65
-                      </option>
-                      <option value="234" name="nigeria">
-                        +234
-                      </option>
-                      <option value="249" name="sudan">
-                        +249
-                      </option>
-                      <option value="48" name="poland">
-                        +48
-                      </option>
-                      <option value="49" name="germany">
-                        +49
-                      </option>
-                    </select>
-                    <input
-                      type="nummber"
-                      placeholder="Phone Number"
-                      value={phoneNumber}
-                      name="phoneNumber"
-                      onChange={(e) => setPhoneNumber(e.target.value)}
-                      className={styles.input_tag}
-                      required
-                    />
-                  </div>
-                  <button onClick={requestOtp}>
-                    Send OTP
-                  </button>
+                <div className={styles.form}>
+                  <PhoneInput
+                    type="nummber"
+                    defaultCountry="IN"
+                    placeholder="Phone Number"
+                    value={phoneNumber}
+                    name="phoneNumber"
+                    onChange={setPhoneNumber}
+                    className={styles.input_tag}
+                    required
+                  />
+                  <button onClick={requestOtp}>Send OTP</button>
 
                   <input
                     type="number"
@@ -177,7 +153,7 @@ const OTPPage = () => {
                     className={styles.input_tag}
                   />
                   <div id="recaptcha-container"></div>
-                  <button  className={styles.submit_btn} onClick={verifyOTP}>
+                  <button className={styles.submit_btn} onClick={verifyOTP}>
                     Verify
                   </button>
                 </div>
@@ -186,7 +162,9 @@ const OTPPage = () => {
           </div>
           <div className={styles.already_signup}>
             <p>Already signed up with Milaap?</p>
-            <button>Login</button>
+            <button>
+              <Link to={"/"}>Login</Link>
+            </button>
           </div>
         </div>
       </div>
