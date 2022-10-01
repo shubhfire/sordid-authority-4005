@@ -3,12 +3,11 @@ import styles from "../registerPage/Register.module.css";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import { useToast } from "@chakra-ui/react";
-
 import { BiShow, BiHide } from "react-icons/bi";
-
 import axios from "axios";
 import { getNameFromLocal } from "../../utils/localStorage";
 import * as types from "../../Redux/authReducer/actionType";
+import { useSpeechSynthesis } from "react-speech-kit";
 const Login = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -16,13 +15,16 @@ const Login = () => {
   const [show, setShow] = useState(false);
   const handleClick = () => setShow(!show);
 
+  const {speak}=useSpeechSynthesis()
+
   const toast = useToast();
   const dispatch = useDispatch();
   const location = useLocation();
   const navigation = useNavigate();
   const commingFrom = location.state?.from?.pathname || "/";
 
-  const handleLogin = () => {
+  const handleLogin = (e) => {
+    e.preventDefault()
     const checkEmails = storedData.map((e) => {
       return e.email;
     });
@@ -42,6 +44,8 @@ const Login = () => {
           break;
         }
       }
+      let successText="You are login successfuly"
+      speak({text:successText})
       toast({
         title: "You are login success",
         position: "bottom",
@@ -53,7 +57,8 @@ const Login = () => {
       navigation(commingFrom, { replace: true });
     } else {
       dispatch({ type: types.USER_LOGIN_FAILURE, payload: false });
-
+      let errorText="Invalid email or password"
+      speak({text:errorText})
       toast({
         title: "Wrong email or password",
         position: "bottom",
