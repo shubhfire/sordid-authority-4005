@@ -5,6 +5,7 @@ import { useDispatch } from "react-redux";
 import { registerData } from "../../Redux/authReducer/action";
 import { useToast } from "@chakra-ui/react";
 import { BiShow, BiHide } from "react-icons/bi";
+import { useSpeechSynthesis } from "react-speech-kit";
 
 const Register = () => {
   const [fullName, setFullName] = useState("");
@@ -14,6 +15,8 @@ const Register = () => {
   const toast = useToast();
   const [show, setShow] = useState(false);
   const handleClick = () => setShow(!show);
+  const {speak}=useSpeechSynthesis()
+
 
   const dispatch = useDispatch();
   const handleSubmit = (e) => {
@@ -36,6 +39,8 @@ const Register = () => {
         navigate("/OTPPage");
       });
     }
+    let successText="Your data has been registered successfully on milaap web site"
+    speak({text:successText})
   };
   return (
     <div className={styles.main}>

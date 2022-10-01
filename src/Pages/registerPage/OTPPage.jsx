@@ -5,12 +5,17 @@ import { authentication } from "./firebase_config";
 import { RecaptchaVerifier, signInWithPhoneNumber } from "firebase/auth";
 import { useToast } from "@chakra-ui/react";
 import { Link, useNavigate } from "react-router-dom";
+import { useSpeechSynthesis } from "react-speech-kit";
+import 'react-phone-number-input/style.css'
+import PhoneInput from "react-phone-number-input";
 
 const OTPPage = () => {
   const [phoneNumber, setPhoneNumber] = useState();
   const [expandForm, setExpandForm] = useState(false);
   const [otp, setOtp] = useState();
   const navigation = useNavigate();
+  const {speak}=useSpeechSynthesis()
+
 
   const toast = useToast();
 
@@ -22,13 +27,15 @@ const OTPPage = () => {
         callback: (response) => {
           // reCAPTCHA solved, allow signInWithPhoneNumber.
         },
+        // defaultCountry:"IN"
       },
       authentication
     );
   };
   const requestOtp = (e) => {
     e.preventDefault();
-    alert("requestOTP");
+    alert("OTP sent");
+    alert(phoneNumber)
 
     if (phoneNumber === "" || phoneNumber.length < 10) return;
     setExpandForm(true);
@@ -52,6 +59,9 @@ const OTPPage = () => {
         .confirm(otp)
         .then((result) => {
           const user = result.user;
+
+          let successText="Welcome in meelaaap family"
+          speak({text:successText})
           toast({
             title: ``,
             position: "bottom",
@@ -63,6 +73,8 @@ const OTPPage = () => {
           navigation("/");
         })
         .catch((error) => {
+          let successText="Please enter valid OTP"
+          speak({text:successText})
           toast({
             title: "Invalid OTP",
             position: "bottom",
@@ -120,12 +132,13 @@ const OTPPage = () => {
               </div>
               <div>
                 <div className={styles.form}>
-                  <input
+                  <PhoneInput
                     type="nummber"
+                    defaultCountry="IN"
                     placeholder="Phone Number"
                     value={phoneNumber}
                     name="phoneNumber"
-                    onChange={(e) => setPhoneNumber(e.target.value)}
+                    onChange={setPhoneNumber}
                     className={styles.input_tag}
                     required
                   />
