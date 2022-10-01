@@ -1,0 +1,16 @@
+.choose {
+  width: 45px;
+  padding: 5px;
+  object-fit: cover;
+}
+.cardHeading {
+  min-width: 35%;
+}
+.chooseName {
+  padding: 5px;
+  color: #212121;
+  font-size: 18px;
+}
+.des {
+  font-size: 15px;
+}

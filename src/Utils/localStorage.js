@@ -1,15 +1,26 @@
-const loadData = (key) => {
-  try {
-    let data = localStorage.getItem(key);
-    data = JSON.parse(data);
-    return data;
-  } catch (e) {
-    return undefined;
-  }
-};
+const getLocalData=key=>{
+    if(key){
+        let data=localStorage.getItem(key)
+        return data
+    }
+}
 
-const saveData = (key, value) => {
-  localStorage.setItem(key, JSON.stringify(value));
-};
+const getNameFromLocal=key=>{
+    if(key){
+        let data=localStorage.getItem(key)
+        return data
+    }
+}
 
-export { saveData, loadData };
+const saveNameInLocal=(key,value)=>{
+    if(key && value){
+        localStorage.setItem(key,value)
+    }
+}
+const saveLocalData=(key,value)=>{
+    if(key && value){
+       localStorage.setItem(key,value)
+    }
+}
+
+export {getLocalData,saveLocalData,getNameFromLocal,saveNameInLocal}
