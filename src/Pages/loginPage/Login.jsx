@@ -7,8 +7,8 @@ import { useToast } from "@chakra-ui/react";
 import { BiShow, BiHide } from "react-icons/bi";
 
 import axios from "axios";
-import { getNameFromLocal } from "../utils/localStorage";
-import * as types from "../Redux/authReducer/actionType"
+import { getNameFromLocal } from "../../utils/localStorage";
+import * as types from "../../Redux/authReducer/actionType"
 const Login = () => {
   
     const [email, setEmail] = useState("");

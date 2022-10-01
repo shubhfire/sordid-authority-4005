@@ -1660,9 +1660,135 @@
     },
     {
       "fullName": "Imran",
-      "email": "imran123@gmai.com",
+      "email": "imran123@gmail.com",
       "password": "imran@123",
       "id": 7
+    },
+    {
+      "fullName": "Imran",
+      "email": "test@gmail.com",
+      "password": "test",
+      "id": 8
+    }
+  ],
+
+  "lendData": [
+    {
+      "id": 1,
+      "title": "Rina Das And Group",
+      "image": "https://cimages.milaap.org/milaap/image/upload/c_fill,g_faces,h_215,w_320/v1656735329/production/images/loan/a020o000011o3FYAAY-KarandighiBrJuiGroup_1656735328.jpg",
+      "location": "Karandighi, West Bengal",
+      "Purpose": "to purchase seeds, fertilisers and other raw materials for the cultivation of paddy and vegetables",
+      "description": "Rina is a 40-year-old married woman residing in Uttar Dinajpur district of West Bengal. She has a household of 4 members, which includes 1 school-going girl child. Her family is involved in the business of paddy cultivation and she has a monthly household income of INR 9,000. The monthly household expenses amount to INR 5,000. Rina is the leader of a group of 28 women, all of whom are involved in cultivation of paddy and vegetables. Rina has applied for a loan of INR 7,50,000 from DCBS, one of Milaap's field partners. Rina and her",
+      "funded": 500399.71,
+      "required": 249600.29,
+      "place": "West Bengal",
+      "gender": "Female",
+      "for": "Enterprise Development"
+    },
+    {
+      "id": 2,
+      "title": "Arti Rani Mahato And Group",
+      "image": "https://cimages.milaap.org/milaap/image/upload/c_fill,g_faces,h_215,w_320/v1656834689/production/images/loan/a029000000uOWxfAAG-IMG-20181015-WA0008_1656834687.jpg",
+      "location": "Karandighi, West Bengal",
+      "Purpose": "to purchase seeds, fertilizers etc. in order to expand the existing farming business.",
+      "description": "Arti Rani (sitting at the first row, second from the right-hand side) is a 43-year-old woman from Uttar Dinajpur, West Bengal, with a family of four members and a monthly household income of INR 9,000. She has formed a self-help group, named Sabuj Arti, with 22 other women belonging from her village. These women are extremely hardworking and driven to better their livelihood. They cultivate paddy and a variety of vegetable crops in their fields. These women now wish to expand their business by purchasing more seeds and fertilizers.",
+      "funded": 466691.77,
+      "required": 33308.23,
+      "place": "West Bengal",
+      "gender": "Female",
+      "for": "Enterprise Development"
+    },
+    {
+      "id": 3,
+      "title": "Sunita And Group",
+      "image": "https://cimages.milaap.org/milaap/image/upload/c_fill,g_faces,h_215,w_320/v1660291964/production/images/loan/a020o0000182LmiAAE-MGS1B05_1660291962.jpg",
+      "location": "Kwakeithel Branch, Manipur",
+      "Purpose": "to be able to pay for their children's primary and secondary education costs for their better future",
+      "description": "Sunita is a 40-year-old married woman and a mother of two school-going children. She lives in a small village in Imphal-West district, Manipur. She is engaged in small business and her family monthly income is Rs. 23,000. The income is not enough for all the household expenses along with the education costs of both her children. She wishes to fulfill all the dreams of her children but is worried due to the lack of proper savings. She is a part of a six members group who have similar issues. Due to a lack of proper capital, they are no...",
+      "funded": 311487.49,
+      "required": 48512.51,
+      "place": "Manipur",
+      "gender": "Female",
+      "for": "Enterprise Development"
+    },
+    {
+      "id": 4,
+      "title": "Ibemcha And Group",
+      "image": "https://cimages.milaap.org/milaap/image/upload/c_fill,g_faces,h_215,w_320/v1660291990/production/images/loan/a020o0000182LmsAAE-TMMB01_1660291988.jpg",
+      "location": "Sega Road Branch, Manipur",
+      "Purpose": "to purchase school supplies and pay school fees",
+      "description": "Ibemcha is a 35-year-old married woman from the Imphal West district of Manipur. She has a family of 5 members and an income of INR 25,000, which barely makes their ends meet. She is a part of a group of mothers of young students who have realized the importance of a good education. But their low family incomes cannot sustain their children's high educational aspirations in life. So she and her friends have formed a group of 5 members to take up an education loan of INR 3,00,000 from Chanura, one of Milaap's field partners. The child...",
+      "funded": 259500.39,
+      "required": 40499.61,
+      "place": "Manipur",
+      "gender": "Female",
+      "for": "Education"
+    },
+    {
+      "id": 5,
+      "title": "Sunanda Debnath And Group",
+      "image": "https://cimages.milaap.org/milaap/image/upload/c_fill,g_faces,h_215,w_320/v1658921767/production/images/loan/a020o00000wMcxmAAC-KPMay19_1658921766.jpg",
+      "location": "Kadapara, West Bengal",
+      "Purpose": "to invest more in the shoemaking businss by buying the raw materials",
+      "description": "Lila is a 37-year-old married woman residing in Imphal West district of Manipur. She runs a household of 5 members. She is involved in shoemaking business and manages to accumulate a household income of a monthly amount of INR. 15,500. She runs a group of 28 members who are good weavers too. She realises that an increase in her income levels and control over income will ensure greater levels of economic independence. It will give her an independent means of generating wealth and becoming self-reliant in a society. This will generat...",
+      "funded": 91653.75,
+      "required": 468346.25,
+      "place": "West Bengal",
+      "gender": "Female",
+      "for": "Enterprise Development"
+    },
+    {
+      "id": 6,
+      "title": "Sandhya Mondal And Group",
+      "image": "https://cimages.milaap.org/milaap/image/upload/c_fill,g_faces,h_215,w_320/v1658921781/production/images/loan/a020o00000xCMc9AAG-KPjune19_1658921779.jpg",
+      "location": "Kadapara, West Bengal",
+      "Purpose": "to invest more in the shoemaking businss by buying the raw materials",
+      "description": "Bijoli is a 29-years-old married woman from a small village of Kolkata district, West Bengal. She has a family of 5 members and manages to accumulate a monthly household income of an amount of INR 17,000. she runs a group of 20 women She runs the stationery business.She plans to purchase more stock of grocery stock in order to make more profit and increase her family income. An increase in the income levels and control over income will ensure greater levels of economic independence for the women in the villages. It will give an in... ",
+      "funded": 55835,
+      "required": 344165,
+      "place": "West Bengal",
+      "gender": "Female",
+      "for": "Enterprise Development"
+    },
+    {
+      "id": 7,
+      "title": "Shyamali Das And Group",
+      "image": "https://cimages.milaap.org/milaap/image/upload/c_fill,g_faces,h_215,w_320/v1660283784/production/images/loan/a020o000016LBvkAAG-GrameenShakti-L-1020-171750_1660283782.jpg",
+      "location": "Kadapara, West Bengal",
+      "Purpose": "to purchase fishes in order to expand fishing business.",
+      "description": "Shyamali is a 30- year- old married woman. She resides in Burdwan district of West Bengal. She has a household of size 4 members. She manages to accumulate a monthly household income of INR 7,500. She has formed and is leading a group of 27 members who work hard to support their families and save diligently. She realized that an increase in her and her friend's income levels and control over income will ensure economic empowerment. It will give them an independent means of generating wealth and becoming self-reliant in a society. This...  ",
+      "funded": 111297.5,
+      "required": 887702.5,
+      "place": "West Bengal",
+      "gender": "Female",
+      "for": "Enterprise Development"
+    },
+    {
+      "id": 8,
+      "title": "Premabati And Group",
+      "image": "https://cimages.milaap.org/milaap/image/upload/c_fill,g_faces,h_215,w_320/v1660292002/production/images/loan/a020o0000182LmxAAE-SAT1B01_1660292000.jpg",
+      "location": "Sega Road Branch, Manipur",
+      "Purpose": "to pay for the school fees, school van fees and study materials, etc. in order to support children's education.",
+      "description": "Premabati (lady with the green dupatta) is a 50-year-old woman from a small village in the west of Imphal, Manipur. She has a family of 4, including 2 children and a monthly household income of INR 23,000. She has founded a JLG group with 4 other women in her village. These women want to contribute to children's education needs. They have collectively applied for a loan of INR 3,00,000 at Chanura, one of Milaap's field partners. They shall use the loan amount to pay for the school fees, school van fees, and for buying study materi...  ",
+      "funded": 160230,
+      "required": 139770,
+      "place": "Manipur",
+      "gender": "Female",
+      "for": "Education"
+    },
+    {
+      "id": 9,
+      "title": "Dolan Santra And Group",
+      "image": "https://cimages.milaap.org/milaap/image/upload/c_fill,g_faces,h_215,w_320/v1659782145/production/images/loan/a020o000010KygSAAS-GrameenShakti-L-1019-167114_1659782144.jpg",
+      "location": "Shantipur, West Bengal",
+      "Purpose": "to buy threads in bulk and make as well as sell more number of sarees",
+      "description": "Dolan is a 29-year-old married woman residing in Nadia district of West Bengal. She has a family of 3 members. She assists her husband and manages to accumulate a household income of an amount of INR.9,500 per month. She is the leader of a big group of 65 women. With a better income generation, she can help in the running of the household and also cater to her family better. This will give her a sense of financial interdependence making her a valuable part of the community. with the growing expenses in the market additional earnin...  ",
+      "funded": 75527,
+      "required": 2924473,
+      "place": "West Bengal",
+      "gender": "Female",
+      "for": "Enterprise Development"
     }
   ]
 }

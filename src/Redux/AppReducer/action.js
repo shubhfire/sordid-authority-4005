@@ -28,7 +28,7 @@ export const getlendDataSuccess = (payload) => {
 export const getLendData = () => (dispatch) => {
   dispatch(getlendDataRequest());
   axios
-    .get("http://localhost:8080/content")
+    .get("http://localhost:8080/lendData")
     .then((r) => {
       dispatch(getlendDataSuccess(r.data));
     })
