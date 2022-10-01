@@ -15,6 +15,7 @@ import {
   useBreakpointValue,
   SimpleGrid,
 } from "@chakra-ui/react";
+import Footer from "./Footer/Footer"
 import { AiFillRightCircle } from "react-icons/ai";
 import { HiSearch } from "react-icons/hi";
 import { BsDiamondFill, BsSuitDiamondFill } from "react-icons/bs";
@@ -758,7 +759,7 @@ const HomePage = () => {
           </Box>
         </Box>
       </Box>
-
+      <Footer/>
       {/* carosel div end here */}
     </Box>
   );

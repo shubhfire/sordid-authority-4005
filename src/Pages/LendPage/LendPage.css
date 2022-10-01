@@ -1,6 +1,19 @@
+.spin {
+  position: inherit;
+  height: 40vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.spin > p {
+  color: gray;
+}
+
 .lendHeading {
-  border: 1px solid black;
   width: 1120px;
+  margin: auto;
   padding: 24px 0;
 }
 
@@ -18,7 +31,6 @@
 }
 
 .mianContent {
-  border: 1px solid red;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
@@ -28,11 +40,11 @@
 }
 
 .sortPaginate {
+  min-width: 850px;
+  margin: 40px 0;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  min-width: 850px;
-  margin: 40px 0;
 }
 
 .sortContainer {
@@ -43,12 +55,19 @@
   align-items: center;
 }
 
-
-
-.sortIcon{
+.sortIcon {
+  border-radius: 18px;
+  height: 28px;
+  text-align: center;
+  border: 1px solid rgb(174, 174, 174);
+  cursor: pointer;
   width: 44px;
 }
 
-button{
-  margin: 4px 0 0
+.sortIcon:hover {
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
+}
+
+.sortIcon > button {
+  margin: 4px 0 0 0;
 }
