@@ -49,10 +49,9 @@ const SingleDonate = () => {
              />
              <Flex m="20px 10px 10px 10px" justifyContent="space-between">
                <Flex>
-               <CircularProgress value={item.progress_circle}  color="green"
-            size="60px">
+               <CircularProgress value={item.progress_circle}  color="green" size="60px" marginBottom='20px'>
               <CircularProgressLabel>
-              {item.progress_circle}%
+                {item.progress_circle}
             </CircularProgressLabel>
              </CircularProgress>
              <Stack textAlign="left" m="12px">
@@ -78,11 +77,10 @@ const SingleDonate = () => {
             color="white"
             size="lg"
             w="250px"
-
             borderRadius="25px"
+              gap='10px'
           >
-            
-            <BsWhatsapp/>
+          <BsWhatsapp/>
             Share
           </Button></a>
           
@@ -95,6 +93,7 @@ const SingleDonate = () => {
             borderRadius="25px"
             m="20px"
             mt="-2px"
+            gap='10px'
           >
             <BsFacebook />
             Share
@@ -356,9 +355,10 @@ const SingleDonate = () => {
                 value={item.progress_circle}
                 color="green"
                 size="60px"
+                marginBottom='20px'
               >
                 <CircularProgressLabel>
-                  {item.progress_circle}%
+                  {item.progress_circle}
                 </CircularProgressLabel>
               </CircularProgress>
               <Stack textAlign="left" m="12px">
