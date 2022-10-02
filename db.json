@@ -1629,64 +1629,10 @@
       "id": 1
     },
     {
-      "fullName": "John",
-      "email": "john123@gmail.com",
-      "password": "John@123",
-      "id": 2
-    },
-    {
-      "fullName": "Bhaskar Chaudhary",
-      "email": "bhaskar@gmail.com",
-      "password": "Bhaskar@123",
-      "id": 3
-    },
-    {
-      "fullName": "Peter",
-      "email": "peter@gmail.com",
-      "password": "Peter@123",
-      "id": 4
-    },
-    {
-      "fullName": "AB",
-      "email": "ab@gmail.com",
-      "password": "Ab@123",
-      "id": 5
-    },
-    {
-      "fullName": "AK",
-      "email": "ak123@gmail.com",
-      "password": "Ak@123",
-      "id": 6
-    },
-    {
-      "fullName": "Imran",
-      "email": "imran123@gmai.com",
-      "password": "imran@123",
-      "id": 7
-    },
-    {
-      "fullName": "Abhi",
-      "email": "abhi@gmail.com",
-      "password": "Abhi@123",
-      "id": 8
-    },
-    {
-      "fullName": "Abhishek",
-      "email": "abhi123@gmail.com",
-      "password": "Abhi@123",
-      "id": 9
-    },
-    {
-      "fullName": "AC",
-      "email": "ac@gmail.com",
-      "password": "AC@123",
-      "id": 10
-    },
-    {
-      "fullName": "Asasas",
-      "email": "test@gmail.com",
+      "fullName": "Ashish ",
+      "email": "abc@gmail.com",
       "password": "Abc@123",
-      "id": 11
+      "id": 2
     }
   ]
 }
