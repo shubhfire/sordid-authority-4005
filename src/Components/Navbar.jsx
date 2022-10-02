@@ -130,7 +130,7 @@ const dispatch=useDispatch()
               }}
             >
               <NavLink
-                to="/"
+                to="/Home"
                 style={({ isActive }) => (isActive ? activeStyle : active4)}
               >
                 Home

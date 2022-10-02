@@ -21,7 +21,7 @@ import { HiSearch } from "react-icons/hi";
 import { BsDiamondFill, BsSuitDiamondFill } from "react-icons/bs";
 import { useDispatch, useSelector } from "react-redux/es/exports";
 import { getinTheHomeData } from "../Redux/AppReducer/action";
-import React, { useEffect, useState } from "react";
+import React, {useState } from "react";
 import { NavLink } from "react-router-dom";
 import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a loader
 import { Carousel } from "react-responsive-carousel";

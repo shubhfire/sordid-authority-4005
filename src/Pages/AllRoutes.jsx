@@ -4,7 +4,6 @@ import Login from "./loginPage/Login";
 import OTPPage from "./registerPage/OTPPage";
 import ContactUs from "../Pages/ContactUs/ContactUs";
 import Price from "./Pricing/Price";
-// import Price from "./Pricing/Price";
 import HomePage from "../Pages/HomePage";
 import Register from "./registerPage/Register";
 import LendPage from "./LendPage/LendPage";
@@ -16,9 +15,9 @@ const AllRoutes = () => {
   return (
     <div>
       <Routes>
-        {/* <Route path="/" element={<HomePage/>}/> */}
+        
 
-        <Route path="/" element={<HomePage />} />
+        <Route path="/Home" element={<HomePage />} />
         <Route path="/donate" element={<Donate />} />
         <Route path="/donate/:id" element={<SingleDonate />} />
 
