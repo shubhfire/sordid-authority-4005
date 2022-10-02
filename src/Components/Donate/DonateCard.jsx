@@ -31,7 +31,7 @@ const DonateCard = ({data}) => {
              <CircularProgress value={data.progress_circle}  color="green"
             size="50px">
               <CircularProgressLabel>
-              {data.progress_circle}%
+              {data.progress_circle}
             </CircularProgressLabel>
              </CircularProgress>
              <Stack textAlign="left" ml="10px">
