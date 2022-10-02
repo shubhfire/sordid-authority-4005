@@ -1,12 +1,12 @@
 import React from "react";
 import FilterLend from "./FilterLend";
-import { lendfilterdata } from "../../Pages/LendPage/LendData";
+import res from "./LendData.json";
 import { useEffect, useState } from "react";
 import { useSearchParams } from "react-router-dom";
-import styles from "./lend.module.css";
+import "./LendCard.css"
 
 const LendCard = () => {
-  let filterName = lendfilterdata.filterName;
+  let filterName = res.filterName;
   const [searchParams, setSearchParams] = useSearchParams();
 
   const initialState = searchParams.getAll("category");
@@ -27,11 +27,11 @@ const LendCard = () => {
     setSearchParams({ category: category });
   }, [category]);
   return (
-    <div className={styles.lendCardContainer}>
-      <p className={styles.sortBy}>Filter By</p>
-      {filterName?.map((i) => {
+    <div className="lendCardContainer">
+      <p className="sortBy">Filter By</p>
+      {filterName.map((i) => {
         return (
-          <div className={styles.lendBox} key={i.id}>
+          <div className="lendBox" key={i.id}>
             <FilterLend
               item={i}
               key={i.id}

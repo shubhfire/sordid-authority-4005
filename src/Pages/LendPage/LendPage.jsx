@@ -1,17 +1,27 @@
-import React, { useState } from "react";
-import LendCard from "../../Components/Lend/LendCard";
-import { RiArrowUpDownFill } from "react-icons/ri";
-import styles from "./LendPage.module.css";
-import SelectDrop from "../../Components/Lend/SelectDrop";
+import React, { useEffect, useState } from "react";
+import { useDispatch, useSelector } from "react-redux";
 import { useSearchParams } from "react-router-dom";
 import ContentCard from "../../Components/Lend/ContentCard";
-import { lendfilterdata } from "./LendData";
+import LendCard from "../../Components/Lend/LendCard";
+import LendTop from "../../Components/Lend/LendTop";
+import { getLendData } from "../../Redux/AppReducer/action";
+import "./LendPage.css";
+import { Heading, Spinner } from "@chakra-ui/react";
+import SelectDrop from "../../Components/Lend/SelectDrop";
+import { RiArrowUpDownFill } from "react-icons/ri";
 
 const LendPage = () => {
-  const [sortVal, setSortVal] = useState("popularity");
-  const [low, setLow] = useState(false);
+  const dispatch = useDispatch();
   const [searchParams] = useSearchParams();
+  const lendData = useSelector((state) => state.AppReducer.lendData);
+  const isLoading = useSelector((state) => state.AppReducer.isLoading);
   const initialState = searchParams.getAll("category");
+
+  const [sortVal, setSortVal] = useState("popularity");
+  // console.log("sortVal:", sortVal);
+  // console.log(lendData);
+  // console.log(initialState);
+  const [low, setLow] = useState(false);
 
   const handleChangeVal = (e) => {
     setSortVal(e.target.value);
@@ -20,6 +30,10 @@ const LendPage = () => {
   const handleSortBtn = () => {
     setLow(!low);
   };
+
+  useEffect(() => {
+    dispatch(getLendData());
+  }, []);
 
   let dataLength;
 
@@ -45,26 +59,22 @@ const LendPage = () => {
   };
 
   return (
-    <div>
-      {/* lend top */}
-
-      <div className={styles.lendHeading}>
-        <h1>You can help a family fundraise for a better life. Make a loan.</h1>
-        <p>
-          Select a loan you feel the most for, based on the cause, geography or
-          the fundraising need.
-        </p>
-      </div>
-
-      {/* filter button and sort */}
-
-      <div>
-        <div className={styles.mianContent}>
+    <div className="lendContainer">
+      <LendTop />
+      {isLoading ? (
+        <div className="spin">
+          <div>
+            <Spinner color="red.700" size="xl" speed="0.6s" thickness="5px" />
+          </div>
+          <p>Please wait...</p>
+        </div>
+      ) : (
+        <div className="mianContent">
           <LendCard />
-          <div className={styles.contentItems}>
-            <div className={styles.sortPaginate}>
+          <div className="contentItems">
+            <div className="sortPaginate">
               <div></div>
-              <div className={styles.sortContainer}>
+              <div className="sortContainer">
                 <p>Sort by</p>
                 <SelectDrop changeVal={handleChangeVal} />
                 <div className="sortIcon">
@@ -74,12 +84,36 @@ const LendPage = () => {
                 </div>
               </div>
             </div>
+            {initialState &&
+              mapAndSort(
+                lendData?.filter((i) => {
+                  if (
+                    initialState.includes(i.place) ||
+                    initialState.includes(i.gender) ||
+                    initialState.includes(i.for)
+                  ) {
+                    return true;
+                  }
+                  return false;
+                })
+              )}
+            {dataLength === 0 && initialState.length !== 0 && (
+              <Heading
+                size="lg"
+                fontSize="40px"
+                style={{
+                  color: "gray",
+                  textAlign: "center",
+                  margin: "160px 0",
+                }}
+              >
+                Sorry no data found!!!
+              </Heading>
+            )}
+            {initialState.length === 0 && mapAndSort(lendData)}
           </div>
         </div>
-      </div>
-
-      {/* filter button */}
-      
+      )}
     </div>
   );
 };

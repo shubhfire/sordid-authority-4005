@@ -54,8 +54,8 @@ const DonateModal = ({ isOpen, onOpen, onClose }) => {
               gap={"10%"}
               justifyContent={"space-beetween"}
             >
-              <label>Include a tip of</label>
-              <Select w={"50%"} mb={"6%"}>
+              <label style={{paddingTop:'20px', paddingLeft:"10px"}}>Include a tip of</label>
+              <Select style={{marginTop:'15px'}} w={"50%"} mb={"6%"}>
                 <option>10 % (₹ 250.00)</option>
                 <option>12 % (₹ 300.00)</option>
                 <option>14 % (₹ 350.00)</option>
@@ -64,7 +64,7 @@ const DonateModal = ({ isOpen, onOpen, onClose }) => {
               </Select>
             </Flex>
           </Box>
-          <Box>
+          <Box >
               <Input mt={"3%"} mr={"2%"} type="text" mb="25px" placeholder={"Name"} required/>
               <Input mt={"3%"} mr={"2%"} type="text" mb="25px" placeholder={"Mobile no"} required/>
               <Input mb="25px" mt={"3%"} type="email" placeholder={"Email address"} required />

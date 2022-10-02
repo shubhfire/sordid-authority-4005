@@ -1,10 +1,10 @@
 import React, { useState } from "react";
 import LendButton from "./LendButton";
+import "./ContentCard.css"
 import { ImLocation } from "react-icons/im";
 import { Progress } from "@chakra-ui/react";
 import LendAlert from "./LendAlert";
-import { loadData, saveData } from "../../Utils/localStorage";
-import styles from "./lend.module.css";
+import { loadData, saveData } from "../../utils/localStorage";
 
 const ContentCard = ({ item }) => {
   //  console.log(item)
@@ -31,9 +31,9 @@ const ContentCard = ({ item }) => {
   };
 
   return (
-    <div className={styles.contentCard}>
-      <div className={styles.leftContent}>
-        <div className={styles.imgDiv}>
+    <div className="contentCard">
+      <div className="leftContent">
+        <div className="imgDiv">
           <img src={item.image} alt="" />
         </div>
         <Progress
@@ -48,12 +48,12 @@ const ContentCard = ({ item }) => {
           colorScheme="pink"
           style={{ borderRadius: "6px", border: "1px solid gray" }}
         />
-        <div className={styles.fundDetails}>
-          <div className={styles.funded}>
+        <div className="fundDetails">
+          <div className="funded">
             <p>Funded</p>
             <p>₹ {item.funded}</p>
           </div>
-          <div className={styles.requires}>
+          <div className="requires">
             <p>Still Requires</p>
             <p>₹ {item.required}</p>
           </div>
@@ -61,8 +61,8 @@ const ContentCard = ({ item }) => {
         {!add && <LendButton name={"Complete the Loan"} id={"lendBtn"} />}
       </div>
 
-      <div className={styles.rightContent}>
-        <div className={styles.aboutLend}>
+      <div className="rightContent">
+        <div className="aboutLend">
           <h2>{item.title}</h2>
           <div>
             <ImLocation />
@@ -71,13 +71,13 @@ const ContentCard = ({ item }) => {
           <p>
             <strong>Purpose</strong>: {item.Purpose}
           </p>
-          <p className={styles.description}>
-            <p className={styles.descDetails}>{item.description}</p>
-            <p className={styles.readMore}>Read more</p>
+          <p className="description">
+            <p className="descDetails">{item.description}</p>
+              <p className="readMore">Read more</p>
           </p>
         </div>
 
-        <div className={styles.lendMoney}>
+        <div className="lendMoney">
           {!add && (
             <>
               <button>₹</button>

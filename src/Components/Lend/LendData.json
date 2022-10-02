@@ -1,0 +1,68 @@
+{
+  "filterName": [
+    {
+      "id": 1,
+      "title": "Cause",
+      "category": [
+        {
+          "id": 11,
+          "tag": "Enterprise Development"
+        },
+        {
+          "id": 22,
+          "tag": "Education"
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "title": "State",
+      "category": [
+        {
+          "id": 111,
+          "tag": "West Bengal"
+        },
+        {
+          "id": 333,
+          "tag": "Manipur"
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "title": "Repayment",
+      "category": [
+        {
+          "id": 1111,
+          "tag": "12 months or less"
+        },
+        {
+          "id": 2222,
+          "tag": "13 to 17"
+        },
+        {
+          "id": 3333,
+          "tag": "18 to 23"
+        },
+        {
+          "id": 4444,
+          "tag": "24 monts or more"
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "title": "Gender",
+      "category": [
+        {
+          "id": 11111,
+          "tag": "Female"
+        },
+        {
+          "id": 22222,
+          "tag": "Male"
+        }
+      ]
+    }
+  ]
+}

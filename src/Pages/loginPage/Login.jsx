@@ -6,7 +6,7 @@ import { useToast } from "@chakra-ui/react";
 import { BiShow, BiHide } from "react-icons/bi";
 import axios from "axios";
 import { getNameFromLocal } from "../../utils/localStorage";
-import * as types from "../../Redux/authReducer/actionType";
+import * as types from "../../Redux/authReducer/actionType"
 import { useSpeechSynthesis } from "react-speech-kit";
 const Login = () => {
   const [email, setEmail] = useState("");
@@ -54,7 +54,7 @@ const Login = () => {
         duration: 9000,
         isClosable: true,
       });
-      navigation(commingFrom, { replace: true });
+      navigation("/");
     } else {
       dispatch({ type: types.USER_LOGIN_FAILURE, payload: false });
       let errorText="Invalid email or password"
