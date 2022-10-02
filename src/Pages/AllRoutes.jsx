@@ -15,12 +15,9 @@ const AllRoutes = () => {
   return (
     <div>
       <Routes>
-        
-
-        <Route path="/Home" element={<HomePage />} />
+        <Route path="/" element={<HomePage />} />
         <Route path="/donate" element={<Donate />} />
         <Route path="/donate/:id" element={<SingleDonate />} />
-
         <Route path="/contactUs" element={<ContactUs />} />
         <Route path="/register" element={<Register />} />
         <Route path="/login" element={<Login />} />
