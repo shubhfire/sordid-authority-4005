@@ -1,6 +1,6 @@
 # Milaap Clone
 
-Milaap is an online crowdfunding platform that enables anyone across India to raise funds for healthcare, education, sports, disaster relief and other personal causes, with great ease. Founded in 2010 by a team of young and passionate entrepreneurs, Milaap has pioneered the development of person to person giving in India. What started as a platform to fund rural projects and micro entrepreneurs, is today widely utilized by Indians to raise funds from friends, family and a wider social network for medical needs, loved ones and charity. Milaap is soon becoming the go-to platform for funding cancer treatment, transplants and other critical emergencies
+Milaap is an online crowdfunding platform that enables anyone across India to raise funds for healthcare, education, sports, disaster relief and other personal causes, with great ease. Founded in 2010 by a team of young and passionate entrepreneurs, Milaap has pioneered the development of person to person giving in India. What started as a platform to fund rural projects and micro entrepreneurs is today widely utilized by Indians to raise funds from friends, family and a wider social network for medical needs, loved ones and charity. Milaap is soon becoming the go-to platform for funding cancer treatment, transplants and other critical emergencies
 
 # Deplyment Link - 
 
