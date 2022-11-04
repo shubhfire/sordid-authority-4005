@@ -3,7 +3,7 @@ import {
   getNameFromLocal,
   saveLocalData,
   saveNameInLocal,
-} from "../../utils/localStorage";
+} from "../../Utils/localStorage";
 import * as types from "./actionType";
 const init = {
   signupData: [],

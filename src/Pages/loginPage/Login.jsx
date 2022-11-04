@@ -5,7 +5,7 @@ import { useDispatch } from "react-redux";
 import { useToast } from "@chakra-ui/react";
 import { BiShow, BiHide } from "react-icons/bi";
 import axios from "axios";
-import { getNameFromLocal } from "../../utils/localStorage";
+import { getNameFromLocal } from "../../Utils/localStorage";
 import * as types from "../../Redux/authReducer/actionType"
 import { useSpeechSynthesis } from "react-speech-kit";
 const Login = () => {
@@ -72,7 +72,7 @@ const Login = () => {
 
   const getStoredData = () => {
     axios
-      .get(`http://localhost:8080/registerData`)
+      .get(`https://ashish-json-api.herokuapp.com/registerData`)
       .then((r) => {
         setStoredData(r.data);
       })

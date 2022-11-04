@@ -4,7 +4,7 @@ import "./ContentCard.css"
 import { ImLocation } from "react-icons/im";
 import { Progress } from "@chakra-ui/react";
 import LendAlert from "./LendAlert";
-import { loadData, saveData } from "../../utils/localStorage";
+import { loadData, saveData } from "../../Utils/localStorage";
 
 const ContentCard = ({ item }) => {
   //  console.log(item)
