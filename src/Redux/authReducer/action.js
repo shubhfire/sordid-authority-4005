@@ -3,7 +3,7 @@ import * as types from "./actionType";
 const registerData = (payload) => (dispatch) => {
   dispatch({ type: types.USER_SIGNUP_REQUEST });
   return axios
-    .post(`http://localhost:8080/registerData`, payload)
+    .post(`https://ashish-json-api.herokuapp.com/registerData`, payload)
     .then((r) => {
       dispatch({ type: types.USER_SIGNUP_SUCCESS, payload: r.data });
     })

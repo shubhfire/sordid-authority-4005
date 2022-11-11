@@ -72,7 +72,7 @@ const Login = () => {
 
   const getStoredData = () => {
     axios
-      .get(`http://localhost:8080/registerData`)
+      .get(`https://ashish-json-api.herokuapp.com/registerData`)
       .then((r) => {
         setStoredData(r.data);
       })

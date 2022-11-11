@@ -39,7 +39,7 @@ const Register = () => {
         navigate("/OTPPage");
       });
     }
-    let successText="Your data has been registered successfully on milaap web site"
+    let successText="Your data has been registered successfully on me laap web site"
     speak({text:successText})
   };
   return (

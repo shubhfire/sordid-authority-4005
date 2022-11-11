@@ -4,7 +4,7 @@ import axios from "axios";
 const getDonate = () => (dispatch) => {
   dispatch({ type: types.GET_DONATE_DATA_REQUEST });
   return axios
-    .get("http://localhost:8080/donate")
+    .get("https://ashish-json-api.herokuapp.com/donate")
     .then((r) => {
       return dispatch({ type: types.GET_DONATE_DATA_SUCCESS, payload: r.data });
     })
@@ -28,7 +28,7 @@ export const getlendDataSuccess = (payload) => {
 export const getLendData = () => (dispatch) => {
   dispatch(getlendDataRequest());
   axios
-    .get("http://localhost:8080/lendData")
+    .get("https://ashish-json-api.herokuapp.com/lendData")
     .then((r) => {
       dispatch(getlendDataSuccess(r.data));
     })
@@ -41,8 +41,7 @@ export const getlendDataFailure = () => {
   };
 };
 
-//////////
-// homedata
+
 
 export const getHomeDataRequest = () => {
   return { type: types.GET_HOME_DATA_REQUEST };
@@ -58,7 +57,7 @@ export const getinTheHomeData = (payload) => (dispatch) => {
   dispatch(getHomeDataRequest());
   return axios
     // .get(`https://floating-crag-24295.herokuapp.com/donate/?_page=${payload}&_limit=6`)   https://floating-crag-24295.herokuapp.com/donate/?q=medical&_limit=6
-    .get(`http://localhost:8080/donate?q=${payload}&_limit=6`)
+    .get(`https://ashish-json-api.herokuapp.com/donate?q=${payload}&_limit=6`)
     .then((r) => {
       dispatch(getHomeDataSuccess(r.data));
     })

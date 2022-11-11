@@ -35,7 +35,6 @@ const OTPPage = () => {
   const requestOtp = (e) => {
     e.preventDefault();
     alert("OTP sent");
-    alert(phoneNumber)
 
     if (phoneNumber === "" || phoneNumber.length < 10) return;
     setExpandForm(true);
