@@ -41,8 +41,7 @@ export const getlendDataFailure = () => {
   };
 };
 
-//////////
-// homedata
+
 
 export const getHomeDataRequest = () => {
   return { type: types.GET_HOME_DATA_REQUEST };

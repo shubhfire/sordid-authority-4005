@@ -54,7 +54,7 @@ const Login = () => {
         duration: 9000,
         isClosable: true,
       });
-      navigation(commingFrom, { replace: true });
+      navigation("/");
     } else {
       dispatch({ type: types.USER_LOGIN_FAILURE, payload: false });
       let errorText="Invalid email or password"
