@@ -17,8 +17,8 @@ Milaap is an online crowdfunding platform that enables anyone across India to ra
 
 # Team Member
 
-* Imran Khan(https://github.com/imran120198)
 * Shubham Singh (https://github.com/shubhfire)
+* Imran Khan(https://github.com/imran120198)
 * Ashish Kumar Chaudhary (https://github.com/AshishChaudhary3639)
 * Md Naquee Alam (https://github.com/Naquee)
 * Sagar Pawar (https://github.com/SPinfluencers)
