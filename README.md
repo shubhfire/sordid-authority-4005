@@ -4,7 +4,7 @@ Milaap is an online crowdfunding platform that enables anyone across India to ra
 
 # Deplyment Link - 
 
-* Netlify Link - https://capable-taiyaki-eb17f0.netlify.app/
+* Netlify Link - comforting-bublanina-ea183a.netlify.app
 
 # Tech Stack
 
